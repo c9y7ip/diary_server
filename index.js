@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 
 
 const app = express();
+var PORT = process.env.PORT || 5000
 
 const accountantURL = "mongodb+srv://test123:test123@diarydb.cwgjq.mongodb.net/accountant?retryWrites=true&w=majority"
 mongoose.connect(accountantURL, {
@@ -34,4 +35,4 @@ app.use('/', secondaryRoute)
 app.use('/', extraRoute)
 
 
-app.listen(5000, () => console.log('Server started on port 5000'));
+app.listen(PORT, () => console.log('Server started on port 5000'));
